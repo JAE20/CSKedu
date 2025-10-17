@@ -1,11 +1,22 @@
 {
-  "name": "cskedu",
+  "name": "accounting-academy",
   "version": "1.0.0",
-  "description": "Educational platform for Computer Science learning",
+  "description": "Interactive educational platform for learning accounting fundamentals",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": [
+    "accounting",
+    "education",
+    "learning-platform",
+    "financial-education",
+    "interactive-learning"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
+

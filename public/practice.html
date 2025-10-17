@@ -3,12 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSKedu - Practice</title>
+    <title>Practice Tools - Accounting Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/practice.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <span>Accounting Academy</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-main" id="navMain">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="course.html" class="nav-link">Courses</a>
+                <a href="practice.html" class="nav-link active">Practice</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Practice Hero -->
+    <section class="practice-hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <i class="fas fa-tools"></i> Interactive Practice Tools
+            </h1>
+            <p class="hero-subtitle">
+                Apply your accounting knowledge with hands-on calculators, simulators, and exercises. 
+                Practice makes perfect!
+            </p>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="card tool-card" onclick="showTool('equation-calculator')">
+                    <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Accounting Equation Calculator</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Visualize how transactions affect the accounting equation in real-time.</p>
+                    </div>
+                </div>
+
+                <div class="card tool-card" onclick="showTool('journal-simulator')">
+                    <div class="card-icon"><i class="fas fa-edit"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Journal Entry Simulator</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Practice recording transactions with instant feedback on debits and credits.</p>
+                    </div>
+                </div>
+
+                <div class="card tool-card" onclick="showTool('ratio-calculator')">
+                    <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Financial Ratio Calculator</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Calculate and interpret key financial ratios for business analysis.</p>
+                    </div>
+                </div>
+
+                <div class="card tool-card" onclick="showTool('quiz')">
+                    <div class="card-icon"><i class="fas fa-question-circle"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Practice Quiz</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Test your knowledge with interactive quizzes on various accounting topics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Sections -->
+    <section class="section section-alt" id="equation-calculator" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Accounting Equation Calculator</h2>
+            <div class="calculator">
+                <div class="calculator-display">
+                    <div class="equation-display">
+                        <div class="equation-part">
+                            <label>Assets</label>
+                            <div class="value" id="assetsValue">$0</div>
+                        </div>
+                        <div class="equation-equals">=</div>
+                        <div class="equation-part">
+                            <label>Liabilities</label>
+                            <div class="value" id="liabilitiesValue">$0</div>
+                        </div>
+                        <div class="equation-plus">+</div>
+                        <div class="equation-part">
+                            <label>Equity</label>
+                            <div class="value" id="equityValue">$0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-controls">
+                    <h3>Add Transaction</h3>
+                    <div class="form-group">
+                        <label class="form-label">Transaction Type</label>
+                        <select class="form-select" id="transactionType">
+                            <option value="">-- Select Transaction --</option>
+                            <option value="owner-investment">Owner Investment (Cash)</option>
+                            <option value="purchase-equipment-cash">Purchase Equipment (Cash)</option>
+                            <option value="purchase-equipment-credit">Purchase Equipment (On Credit)</option>
+                            <option value="pay-liability">Pay Liability</option>
+                            <option value="earn-revenue">Earn Revenue (Cash)</option>
+                            <option value="pay-expense">Pay Expense</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Amount ($)</label>
+                        <input type="number" class="form-input" id="transactionAmount" placeholder="0" min="0">
+                    </div>
+
+                    <button class="btn btn-primary" onclick="processTransaction()">Process Transaction</button>
+                    <button class="btn btn-secondary" onclick="resetEquation()">Reset</button>
+                </div>
+
+                <div id="transactionLog" class="transaction-log"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Entry Simulator -->
+    <section class="section" id="journal-simulator" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Journal Entry Simulator</h2>
+            <div class="calculator">
+                <div class="scenario-box">
+                    <h3>Practice Scenario</h3>
+                    <p id="journalScenario">Select a scenario below to practice creating journal entries.</p>
+                </div>
+
+                <div class="tool-controls">
+                    <div class="form-group">
+                        <label class="form-label">Select Scenario</label>
+                        <select class="form-select" id="scenarioSelect" onchange="loadScenario()">
+                            <option value="">-- Choose a scenario --</option>
+                            <option value="cash-purchase">Cash Purchase of Supplies</option>
+                            <option value="credit-purchase">Credit Purchase of Equipment</option>
+                            <option value="revenue-cash">Cash Revenue from Services</option>
+                            <option value="pay-salary">Pay Employee Salaries</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="journalEntryForm" class="journal-entry-form" style="display: none;">
+                    <h4>Create Your Journal Entry</h4>
+                    <table class="accounting-table">
+                        <thead>
+                            <tr>
+                                <th>Account</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody id="journalEntryBody">
+                            <tr>
+                                <td>
+                                    <select class="form-select journal-account">
+                                        <option value="">-- Select Account --</option>
+                                        <option value="cash">Cash</option>
+                                        <option value="supplies">Supplies</option>
+                                        <option value="equipment">Equipment</option>
+                                        <option value="accounts-payable">Accounts Payable</option>
+                                        <option value="revenue">Service Revenue</option>
+                                        <option value="salary-expense">Salary Expense</option>
+                                    </select>
+                                </td>
+                                <td><input type="number" class="form-input journal-debit" placeholder="0"></td>
+                                <td><input type="number" class="form-input journal-credit" placeholder="0"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select class="form-select journal-account">
+                                        <option value="">-- Select Account --</option>
+                                        <option value="cash">Cash</option>
+                                        <option value="supplies">Supplies</option>
+                                        <option value="equipment">Equipment</option>
+                                        <option value="accounts-payable">Accounts Payable</option>
+                                        <option value="revenue">Service Revenue</option>
+                                        <option value="salary-expense">Salary Expense</option>
+                                    </select>
+                                </td>
+                                <td><input type="number" class="form-input journal-debit" placeholder="0"></td>
+                                <td><input type="number" class="form-input journal-credit" placeholder="0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button class="btn btn-primary mt-4" onclick="checkJournalEntry()">Check Answer</button>
+                </div>
+
+                <div id="journalFeedback"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Ratio Calculator -->
+    <section class="section section-alt" id="ratio-calculator" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Financial Ratio Calculator</h2>
+            <div class="calculator">
+                <div class="tool-controls">
+                    <h3>Enter Financial Data</h3>
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Current Assets ($)</label>
+                            <input type="number" class="form-input" id="currentAssets" placeholder="0" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Current Liabilities ($)</label>
+                            <input type="number" class="form-input" id="currentLiabilities" placeholder="0" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Total Assets ($)</label>
+                            <input type="number" class="form-input" id="totalAssets" placeholder="0" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Total Liabilities ($)</label>
+                            <input type="number" class="form-input" id="totalLiabilities" placeholder="0" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Net Income ($)</label>
+                            <input type="number" class="form-input" id="netIncome" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Revenue ($)</label>
+                            <input type="number" class="form-input" id="revenue" placeholder="0" min="0">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="calculateRatios()">Calculate Ratios</button>
+                </div>
+
+                <div id="ratioResults" class="ratio-results" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Accounting Academy</h4>
+                    <p>Making accounting accessible through interactive practice.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="#equation-calculator">Equation Calculator</a></li>
+                        <li><a href="#journal-simulator">Journal Simulator</a></li>
+                        <li><a href="#ratio-calculator">Ratio Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Accounting Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
     <script src="js/practice.js"></script>
 </body>
 </html>

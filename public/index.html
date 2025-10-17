@@ -3,12 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSKedu - Learn Computer Science</title>
+    <title>Accounting Fundamentals - Master Financial Concepts</title>
+    <meta name="description" content="Learn accounting fundamentals through interactive lessons, real-world examples, and structured learning paths. Perfect for students, business owners, and professionals.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <span>Accounting Academy</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-main" id="navMain">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="course.html" class="nav-link">Courses</a>
+                <a href="practice.html" class="nav-link">Practice</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="#" class="btn btn-primary btn-sm">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero">
+        <div class="hero-carousel">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: linear-gradient(rgba(29, 35, 28, 0.7), rgba(29, 35, 28, 0.7)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <i class="fas fa-chart-line"></i> Master Accounting Fundamentals
+                        </h1>
+                        <p class="hero-subtitle">
+                            Learn accounting through interactive lessons, real-world examples, and hands-on practice. 
+                            Build confidence in financial concepts, from basic principles to advanced applications.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="course.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play-circle"></i> Start Learning
+                            </a>
+                            <a href="#learning-paths" class="btn btn-outline btn-lg">
+                                <i class="fas fa-route"></i> Explore Paths
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(29, 35, 28, 0.7), rgba(29, 35, 28, 0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <i class="fas fa-calculator"></i> Interactive Practice Tools
+                        </h1>
+                        <p class="hero-subtitle">
+                            Apply your knowledge with real-time calculators, journal entry simulators, and financial analysis tools. 
+                            Practice makes perfect in accounting!
+                        </p>
+                        <div class="hero-cta">
+                            <a href="practice.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-tools"></i> Try Practice Tools
+                            </a>
+                            <a href="course.html" class="btn btn-outline btn-lg">
+                                <i class="fas fa-book-open"></i> View Courses
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(29, 35, 28, 0.7), rgba(29, 35, 28, 0.7)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <i class="fas fa-trophy"></i> Track Your Progress
+                        </h1>
+                        <p class="hero-subtitle">
+                            Monitor your learning journey with detailed analytics, achievement badges, and personalized recommendations. 
+                            See how far you've come!
+                        </p>
+                        <div class="hero-cta">
+                            <a href="dashboard.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-chart-bar"></i> View Dashboard
+                            </a>
+                            <a href="#learning-paths" class="btn btn-outline btn-lg">
+                                <i class="fas fa-graduation-cap"></i> Choose Path
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control prev" onclick="moveSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control next" onclick="moveSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="currentSlide(0)"></span>
+                <span class="indicator" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Accounting Academy?</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-book-reader"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Structured Learning</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Follow carefully designed learning paths that take you from foundational concepts to advanced topics with clear progression.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Interactive Practice</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Apply what you learn with interactive exercises, calculators, and real-world scenarios that reinforce your understanding.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Track Progress</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Monitor your learning journey with detailed analytics, achievement badges, and personalized recommendations.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Real-World Focus</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Learn with examples from actual businesses and scenarios you'll encounter in your career or business operations.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Expert Content</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>All content follows GAAP principles and is designed by experienced accounting educators and practitioners.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Self-Paced</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Learn at your own speed with 24/7 access to all materials, allowing you to balance learning with your schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths Section -->
+    <section class="section section-alt" id="learning-paths">
+        <div class="container">
+            <h2 class="section-title">Choose Your Learning Path</h2>
+            <p class="section-subtitle">
+                Select the path that matches your goals and experience level. Each path is carefully designed 
+                to help you master accounting concepts relevant to your needs.
+            </p>
+            <div class="grid grid-2 mt-8">
+                <!-- Student Path -->
+                <div class="learning-path-card">
+                    <div class="learning-path-icon">🎓</div>
+                    <h3 class="learning-path-title">Student Path</h3>
+                    <p class="learning-path-description">
+                        Perfect for high school and college students learning accounting principles, 
+                        preparing for exams, and building a strong academic foundation.
+                    </p>
+                    <div class="learning-path-meta">
+                        <div class="learning-path-meta-item">
+                            <span>📖</span>
+                            <span>25 Modules</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span>⏱️</span>
+                            <span>30-40 hours</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span class="badge badge-success">Beginner</span>
+                        </div>
+                    </div>
+                    <a href="course.html?path=student" class="btn btn-primary mt-6">Start Student Path</a>
+                </div>
+
+                <!-- Business Owner Path -->
+                <div class="learning-path-card">
+                    <div class="learning-path-icon">💼</div>
+                    <h3 class="learning-path-title">Business Owner Path</h3>
+                    <p class="learning-path-description">
+                        Designed for entrepreneurs and small business owners who need practical financial 
+                        knowledge to manage their business finances effectively.
+                    </p>
+                    <div class="learning-path-meta">
+                        <div class="learning-path-meta-item">
+                            <span>📖</span>
+                            <span>20 Modules</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span>⏱️</span>
+                            <span>20-30 hours</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span class="badge badge-success">Beginner</span>
+                        </div>
+                    </div>
+                    <a href="course.html?path=business" class="btn btn-primary mt-6">Start Business Path</a>
+                </div>
+
+                <!-- Aspiring Accountant Path -->
+                <div class="learning-path-card">
+                    <div class="learning-path-icon">📊</div>
+                    <h3 class="learning-path-title">Aspiring Accountant Path</h3>
+                    <p class="learning-path-description">
+                        Comprehensive curriculum for those pursuing a career in accounting, covering fundamental 
+                        to advanced concepts with professional exam preparation focus.
+                    </p>
+                    <div class="learning-path-meta">
+                        <div class="learning-path-meta-item">
+                            <span>📖</span>
+                            <span>35 Modules</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span>⏱️</span>
+                            <span>50-60 hours</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span class="badge badge-info">Intermediate</span>
+                        </div>
+                    </div>
+                    <a href="course.html?path=accountant" class="btn btn-primary mt-6">Start Accountant Path</a>
+                </div>
+
+                <!-- Professional Path -->
+                <div class="learning-path-card">
+                    <div class="learning-path-icon">🎯</div>
+                    <h3 class="learning-path-title">Professional Path</h3>
+                    <p class="learning-path-description">
+                        For professionals in non-accounting roles who need financial literacy to make 
+                        better business decisions and communicate effectively with finance teams.
+                    </p>
+                    <div class="learning-path-meta">
+                        <div class="learning-path-meta-item">
+                            <span>📖</span>
+                            <span>15 Modules</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span>⏱️</span>
+                            <span>15-20 hours</span>
+                        </div>
+                        <div class="learning-path-meta-item">
+                            <span class="badge badge-success">Beginner</span>
+                        </div>
+                    </div>
+                    <a href="course.html?path=professional" class="btn btn-primary mt-6">Start Professional Path</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Topics Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Core Accounting Topics</h2>
+            <p class="section-subtitle">
+                Explore fundamental accounting concepts that form the foundation of financial literacy
+            </p>
+            <div class="grid grid-3 mt-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Accounting Equation</h3>
+                        <span class="badge badge-success">Foundation</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Master the fundamental equation: Assets = Liabilities + Equity. Understand how every transaction maintains this balance.</p>
+                        <a href="course.html#accounting-equation" class="btn btn-outline mt-4">Learn More →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Double-Entry System</h3>
+                        <span class="badge badge-success">Foundation</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Learn how every transaction affects at least two accounts with debits and credits that always balance.</p>
+                        <a href="course.html#double-entry" class="btn btn-outline mt-4">Learn More →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Financial Statements</h3>
+                        <span class="badge badge-info">Intermediate</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Understand the Balance Sheet, Income Statement, and Cash Flow Statement - the core financial reports.</p>
+                        <a href="course.html#financial-statements" class="btn btn-outline mt-4">Learn More →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Journal Entries</h3>
+                        <span class="badge badge-success">Foundation</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Record business transactions systematically using proper journal entry format and accounting principles.</p>
+                        <a href="course.html#journal-entries" class="btn btn-outline mt-4">Learn More →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Adjusting Entries</h3>
+                        <span class="badge badge-info">Intermediate</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Learn accrual accounting through adjusting entries for prepayments, accruals, and deferrals.</p>
+                        <a href="course.html#adjusting-entries" class="btn btn-outline mt-4">Learn More →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Financial Analysis</h3>
+                        <span class="badge badge-warning">Advanced</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Analyze financial performance using ratios, trends, and comparative analysis techniques.</p>
+                        <a href="course.html#financial-analysis" class="btn btn-outline mt-4">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Preview -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Interactive Learning Tools</h2>
+            <p class="section-subtitle">
+                Practice with hands-on tools designed to reinforce your understanding
+            </p>
+            <div class="grid grid-2 mt-8">
+                <div class="card">
+                    <h3 class="card-title">Accounting Equation Calculator</h3>
+                    <p class="card-content">
+                        Visualize how transactions affect the accounting equation in real-time. 
+                        Perfect for understanding the relationship between assets, liabilities, and equity.
+                    </p>
+                    <a href="practice.html#equation-calculator" class="btn btn-primary mt-4">Try Calculator</a>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Journal Entry Simulator</h3>
+                    <p class="card-content">
+                        Practice recording transactions with instant feedback. Learn proper debit and credit 
+                        placement through realistic business scenarios.
+                    </p>
+                    <a href="practice.html#journal-simulator" class="btn btn-primary mt-4">Start Practicing</a>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Financial Statement Builder</h3>
+                    <p class="card-content">
+                        Build balance sheets and income statements from trial balance data. 
+                        Understand how accounts flow into financial statements.
+                    </p>
+                    <a href="practice.html#statement-builder" class="btn btn-primary mt-4">Build Statements</a>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Ratio Analysis Tool</h3>
+                    <p class="card-content">
+                        Calculate and interpret key financial ratios. Learn what ratios reveal about 
+                        a company's financial health and performance.
+                    </p>
+                    <a href="practice.html#ratio-analysis" class="btn btn-primary mt-4">Analyze Ratios</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Ready to Master Accounting?</h2>
+            <p class="section-subtitle">
+                Join thousands of learners building their accounting expertise. Start your journey today with our 
+                comprehensive, interactive learning platform.
+            </p>
+            <div class="hero-cta mt-8">
+                <a href="course.html" class="btn btn-primary btn-lg">Start Learning Free</a>
+                <a href="dashboard.html" class="btn btn-secondary btn-lg">View Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Accounting Academy</h4>
+                    <p>Making accounting accessible and engaging for everyone through interactive education.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Learning</h4>
+                    <ul class="footer-links">
+                        <li><a href="course.html">All Courses</a></li>
+                        <li><a href="course.html#beginner">Beginner Topics</a></li>
+                        <li><a href="course.html#intermediate">Intermediate Topics</a></li>
+                        <li><a href="course.html#advanced">Advanced Topics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Practice</h4>
+                    <ul class="footer-links">
+                        <li><a href="practice.html">Interactive Tools</a></li>
+                        <li><a href="practice.html#quizzes">Quizzes</a></li>
+                        <li><a href="practice.html#exercises">Exercises</a></li>
+                        <li><a href="practice.html#case-studies">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Formulas</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Accounting Academy. All rights reserved. | Designed with dedication to financial education.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>

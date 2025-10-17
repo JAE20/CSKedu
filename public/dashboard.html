@@ -3,12 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSKedu - Dashboard</title>
+    <title>My Dashboard - Accounting Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <span>Accounting Academy</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-main" id="navMain">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="course.html" class="nav-link">Courses</a>
+                <a href="practice.html" class="nav-link">Practice</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard Hero -->
+    <section class="dashboard-hero">
+        <div class="container">
+            <div class="welcome-section">
+                <h1><i class="fas fa-user-circle"></i> Welcome Back, Learner!</h1>
+                <p>Continue your accounting mastery journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-main">
+        <div class="container">
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-content">
+                        <h3 id="completedTopics">0</h3>
+                        <p>Topics Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-content">
+                        <h3 id="totalPoints">0</h3>
+                        <p>Points Earned</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                    <div class="stat-content">
+                        <h3 id="streakDays">0</h3>
+                        <p>Day Streak</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-content">
+                        <h3 id="timeSpent">0h</h3>
+                        <p>Time Spent</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="dashboard-left">
+                    <!-- Progress Overview -->
+                    <div class="dashboard-card">
+                        <div class="card-header-dash">
+                            <h2><i class="fas fa-chart-pie"></i> Learning Progress</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-graduation-cap"></i> Student Path</span>
+                                    <span id="studentProgress">0%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" id="studentBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-briefcase"></i> Business Owner Path</span>
+                                    <span id="businessProgress">0%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" id="businessBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-user-tie"></i> Aspiring Accountant Path</span>
+                                    <span id="accountantProgress">0%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" id="accountantBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span><i class="fas fa-chart-line"></i> Professional Path</span>
+                                    <span id="professionalProgress">0%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" id="professionalBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card">
+                        <div class="card-header-dash">
+                            <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list" id="activityList">
+                                <div class="activity-item">
+                                    <div class="activity-icon"><i class="fas fa-info-circle"></i></div>
+                                    <div class="activity-content">
+                                        <p>Start learning to see your progress here!</p>
+                                        <span class="activity-time">Welcome</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements -->
+                    <div class="dashboard-card">
+                        <div class="card-header-dash">
+                            <h2><i class="fas fa-trophy"></i> Achievements</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="achievements-grid">
+                                <div class="achievement-badge" data-achievement="first-topic">
+                                    <i class="fas fa-medal"></i>
+                                    <p>First Topic</p>
+                                </div>
+                                <div class="achievement-badge" data-achievement="5-topics">
+                                    <i class="fas fa-award"></i>
+                                    <p>5 Topics</p>
+                                </div>
+                                <div class="achievement-badge" data-achievement="perfect-quiz">
+                                    <i class="fas fa-star"></i>
+                                    <p>Perfect Quiz</p>
+                                </div>
+                                <div class="achievement-badge" data-achievement="week-streak">
+                                    <i class="fas fa-fire"></i>
+                                    <p>7 Day Streak</p>
+                                </div>
+                                <div class="achievement-badge" data-achievement="practice-master">
+                                    <i class="fas fa-tools"></i>
+                                    <p>Practice Master</p>
+                                </div>
+                                <div class="achievement-badge" data-achievement="path-complete">
+                                    <i class="fas fa-crown"></i>
+                                    <p>Path Complete</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="dashboard-right">
+                    <!-- Continue Learning -->
+                    <div class="dashboard-card">
+                        <div class="card-header-dash">
+                            <h2><i class="fas fa-play-circle"></i> Continue Learning</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="continueCard" class="continue-card">
+                                <div class="continue-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <div class="continue-content">
+                                    <h3>Start Your Journey</h3>
+                                    <p>Choose a learning path to begin</p>
+                                    <a href="course.html" class="btn btn-primary btn-sm mt-4">
+                                        <i class="fas fa-arrow-right"></i> Browse Topics
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Topics -->
+                    <div class="dashboard-card">
+                        <div class="card-header-dash">
+                            <h2><i class="fas fa-lightbulb"></i> Recommended for You</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="topic-recommendation">
+                                <div class="rec-icon"><i class="fas fa-balance-scale"></i></div>
+                                <div class="rec-content">
+                                    <h4>The Accounting Equation</h4>
+                                    <p>Master the fundamental equation of accounting</p>
+                                    <span class="badge badge-success">Beginner</span>
+                                </div>
+                                <a href="course.html" class="btn btn-outline btn-sm">Start</a>
+                            </div>
+                            <div class="topic-recommendation">
+                                <div class="rec-icon"><i class="fas fa-exchange-alt"></i></div>
+                                <div class="rec-content">
+                                    <h4>Double-Entry Bookkeeping</h4>
+                                    <p>Learn debits, credits, and journal entries</p>
+                                    <span class="badge badge-success">Beginner</span>
+                                </div>
+                                <a href="course.html" class="btn btn-outline btn-sm">Start</a>
+                            </div>
+                            <div class="topic-recommendation">
+                                <div class="rec-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                                <div class="rec-content">
+                                    <h4>Financial Statements</h4>
+                                    <p>Understand balance sheets and income statements</p>
+                                    <span class="badge badge-info">Intermediate</span>
+                                </div>
+                                <a href="course.html" class="btn btn-outline btn-sm">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card">
+                        <div class="card-header-dash">
+                            <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-actions">
+                                <a href="practice.html" class="action-btn">
+                                    <i class="fas fa-calculator"></i>
+                                    <span>Practice Tools</span>
+                                </a>
+                                <a href="course.html" class="action-btn">
+                                    <i class="fas fa-book"></i>
+                                    <span>All Courses</span>
+                                </a>
+                                <a href="#" class="action-btn" onclick="exportProgress()">
+                                    <i class="fas fa-download"></i>
+                                    <span>Export Progress</span>
+                                </a>
+                                <a href="#" class="action-btn" onclick="resetProgress()">
+                                    <i class="fas fa-redo"></i>
+                                    <span>Reset Progress</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Learning Stats Chart -->
+                    <div class="dashboard-card">
+                        <div class="card-header-dash">
+                            <h2><i class="fas fa-chart-bar"></i> This Week</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="week-chart">
+                                <div class="chart-bar" style="height: 40%">
+                                    <span class="bar-value">2</span>
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-label">Mon</span>
+                                </div>
+                                <div class="chart-bar" style="height: 60%">
+                                    <span class="bar-value">3</span>
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-label">Tue</span>
+                                </div>
+                                <div class="chart-bar" style="height: 80%">
+                                    <span class="bar-value">4</span>
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-label">Wed</span>
+                                </div>
+                                <div class="chart-bar" style="height: 50%">
+                                    <span class="bar-value">2</span>
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-label">Thu</span>
+                                </div>
+                                <div class="chart-bar" style="height: 70%">
+                                    <span class="bar-value">3</span>
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-label">Fri</span>
+                                </div>
+                                <div class="chart-bar active" style="height: 90%">
+                                    <span class="bar-value">4</span>
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-label">Sat</span>
+                                </div>
+                                <div class="chart-bar" style="height: 30%">
+                                    <span class="bar-value">1</span>
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-label">Sun</span>
+                                </div>
+                            </div>
+                            <p class="chart-caption"><i class="fas fa-info-circle"></i> Topics completed per day</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Accounting Academy. Track your progress, achieve your goals.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>
