@@ -1,2 +1,2 @@
 # CSKedu
-Educational platform for Computer Science learning
+Educational platform design concept
