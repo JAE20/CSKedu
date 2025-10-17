@@ -1,0 +1,11 @@
+{
+  "name": "cskedu",
+  "version": "1.0.0",
+  "description": "Educational platform for Computer Science learning",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
