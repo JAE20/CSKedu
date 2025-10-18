@@ -4,7 +4,9 @@
   "description": "Interactive educational platform for learning accounting fundamentals",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "tailwind": "tailwindcss -i ./public/css/tailwind-input.css -o ./public/css/tailwind.css --watch",
+    "build:css": "tailwindcss -i ./public/css/tailwind-input.css -o ./public/css/tailwind.css"
   },
   "keywords": [
     "accounting",
@@ -17,6 +19,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.32",
+    "autoprefixer": "^10.4.16"
   }
 }
 

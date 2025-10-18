@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== CUSTOM COMPONENT UTILITIES ===== */
+
+@layer components {
+  /* Buttons */
+  .btn-tailwind {
+    @apply inline-flex items-center justify-center font-medium rounded-md transition-all duration-base cursor-pointer border border-transparent;
+  }
+
+  .btn-primary-tw {
+    @apply btn-tailwind bg-green text-white hover:bg-green-dark active:bg-green-darker;
+  }
+
+  .btn-secondary-tw {
+    @apply btn-tailwind bg-transparent text-charcoal border-charcoal hover:bg-mint;
+  }
+
+  .btn-sm-tw {
+    @apply px-3 py-2 text-sm;
+  }
+
+  .btn-md-tw {
+    @apply px-4 py-2 text-base;
+  }
+
+  .btn-lg-tw {
+    @apply px-6 py-3 text-lg;
+  }
+
+  /* Cards */
+  .card-tw {
+    @apply bg-white rounded-lg shadow-md border border-gray-light p-4;
+  }
+
+  .card-header-tw {
+    @apply border-b border-gray-light pb-4 mb-4;
+  }
+
+  .card-content-tw {
+    @apply space-y-4;
+  }
+
+  /* Progress Bar */
+  .progress-bar-tw {
+    @apply w-full bg-gray-light rounded-full h-2 overflow-hidden;
+  }
+
+  .progress-fill-tw {
+    @apply h-full bg-green rounded-full transition-all duration-base;
+  }
+
+  /* Grid Layouts */
+  .grid-2-tw {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+
+  .grid-3-tw {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+
+  .grid-4-tw {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
+  }
+
+  /* Text Utilities */
+  .text-primary-tw {
+    @apply text-charcoal;
+  }
+
+  .text-secondary-tw {
+    @apply text-gray;
+  }
+
+  .text-muted-tw {
+    @apply text-gray-muted;
+  }
+
+  /* Highlight Boxes */
+  .highlight-box-tw {
+    @apply rounded-lg p-4 border;
+  }
+
+  .highlight-key-concept-tw {
+    @apply highlight-box-tw bg-mint border-green;
+  }
+
+  .highlight-formula-tw {
+    @apply highlight-box-tw bg-charcoal text-white border-charcoal;
+  }
+
+  /* Tables */
+  .table-wrapper-tw {
+    @apply overflow-x-auto;
+  }
+
+  .accounting-table-tw {
+    @apply w-full border-collapse;
+  }
+
+  .accounting-table-tw th {
+    @apply bg-mint text-charcoal font-bold px-4 py-3 text-left border-b-2 border-gray-light;
+  }
+
+  .accounting-table-tw td {
+    @apply px-4 py-3 border-b border-gray-light;
+  }
+
+  .accounting-table-tw tr:hover {
+    @apply bg-mint;
+  }
+
+  .table-debit-tw {
+    @apply text-green font-semibold;
+  }
+
+  .table-credit-tw {
+    @apply text-red-600 font-semibold;
+  }
+
+  /* Navigation */
+  .nav-link-tw {
+    @apply px-4 py-2 text-charcoal hover:text-green transition-colors duration-fast;
+  }
+
+  .nav-link-active-tw {
+    @apply text-green border-b-2 border-green;
+  }
+
+  /* Responsive Visibility */
+  .hide-mobile-tw {
+    @apply hidden md:block;
+  }
+
+  .show-mobile-tw {
+    @apply md:hidden;
+  }
+
+  /* Spacing Utilities */
+  .gap-responsive-tw {
+    @apply gap-2 md:gap-4 lg:gap-6;
+  }
+
+  .px-responsive-tw {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .py-responsive-tw {
+    @apply py-4 md:py-6 lg:py-8;
+  }
+}
+
+/* ===== RESPONSIVE UTILITY HELPERS ===== */
+@layer utilities {
+  /* Flexbox helpers */
+  .flex-center-tw {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between-tw {
+    @apply flex items-center justify-between;
+  }
+
+  /* Text truncation */
+  .truncate-tw {
+    @apply overflow-hidden text-overflow-ellipsis whitespace-nowrap;
+  }
+
+  /* Focus states */
+  .focus-ring-tw {
+    @apply focus:outline-none focus:ring-2 focus:ring-green focus:ring-offset-2;
+  }
+
+  /* Display utilities */
+  .full-width-tw {
+    @apply w-full;
+  }
+
+  .full-height-tw {
+    @apply h-full;
+  }
+
+  /* Position utilities */
+  .sticky-top-tw {
+    @apply sticky top-0 z-sticky;
+  }
+}
